@@ -7,6 +7,22 @@ sudo apt update
 sudo apt install openjdk-17-jdk
 ```
 
+
+### Gerar o Jar
+
+
+```bash
+mvn clean package
+```
+
+```bash
+cp target/FakeCamRunner-1.0-SNAPSHOT.jar .
+```
+
+```bash
+mv FakeCamRunner-1.0-SNAPSHOT.jar app.jar
+```
+
 ### Como usar
 
 ```bash

@@ -9,7 +9,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.URISyntaxException;
 import java.time.Duration;
+import java.util.Objects;
 
 public class BotRunner implements Runnable {
     private final int index;
@@ -58,9 +60,9 @@ public class BotRunner implements Runnable {
         }
     }
 
-    private WebDriver initializeWebDriver() {
-        String videoPath = "/home/null/Documents/git/FakeCamRunner/src/main/resources/video.y4m";
-        String audioPath = "/home/null/Documents/git/FakeCamRunner/src/main/resources/audio.wav";
+    private WebDriver initializeWebDriver() throws URISyntaxException {
+        String videoPath = Objects.requireNonNull(BotRunner.class.getResource("/video.y4m")).toURI().getPath();
+        String audioPath = Objects.requireNonNull(BotRunner.class.getResource("/audio.wav")).toURI().getPath();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--use-fake-ui-for-media-stream");
