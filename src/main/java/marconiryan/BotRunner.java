@@ -59,8 +59,8 @@ public class BotRunner implements Runnable {
     }
 
     private WebDriver initializeWebDriver() {
-        String videoPath = "/home/null/IdeaProjects/FakeCamRunner/src/main/resources/video.y4m";
-        String audioPath = "/home/null/IdeaProjects/FakeCamRunner/src/main/resources/audio.wav";
+        String videoPath = "/home/null/Documents/git/FakeCamRunner/src/main/resources/video.y4m";
+        String audioPath = "/home/null/Documents/git/FakeCamRunner/src/main/resources/audio.wav";
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--use-fake-ui-for-media-stream");
